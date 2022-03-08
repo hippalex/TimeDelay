@@ -48,6 +48,7 @@ extern "C" void app_main(void)
 
     TON TON1;
     TON1.PT = 2000;
+    TOGGLE TOGGLE1;
 
     while (true) // Endlos-Schleife
     {
