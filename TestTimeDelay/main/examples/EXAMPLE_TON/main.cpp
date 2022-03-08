@@ -51,7 +51,7 @@ extern "C" void app_main(void)
 
     TON TON1;
     TON1.PT = 2000;
-    TOGGLE TOGGLE1;
+    TOGGLE RS1;
 
     while (true) // Endlos-Schleife
     {
@@ -62,11 +62,11 @@ extern "C" void app_main(void)
         // den I1 an TON1 uebergeben, und TON1 aufrufen
         TON1(I1);
 
-        TOGGLE1.RST = I2;
-               TOGGLE1( TON1.Q);
+        RS1.RST = I2;
+               RS1( TON1.Q);
 
         // Ausgaenge setzen
-        gpio_set_level(GPIO_Q1,TOGGLE1.Q);
+        gpio_set_level(GPIO_Q1,RS1.Q);
 
         // 100ms warten  = Intervallzeit des Tasks
         vTaskDelay(100 / portTICK_PERIOD_MS); // 100ms cycle for Test.
